@@ -7,6 +7,11 @@ fn reverse(pair: (i32, bool)) -> (bool, i32){
 #[derive(Debug)]
 struct Matrix(f32, f32, f32, f32); 
 
+fn transpose(mtx: Matrix) -> Matrix {
+    Matrix(mtx.0, mtx.2, mtx.1, mtx.3)
+    }
+
+
 fn main() {
     let long_tuple = (1u8, 2u16, 3u32, 4u64, 
                      -1i8, -2i16,-3i32,-4i64,
@@ -39,13 +44,14 @@ fn main() {
     
     impl fmt::Display for Matrix {
         fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result{
-            write!(f, "( {}, {} )", self.0, self.1)
+            write!(f, "( {}, {} ) \n( {} {} )", self.0, self.1, self.2, self.3)
         }
         
     }
     
     
     println!("{}", matrix);
+    println!("{}", transpose(matrix))
 
 }
 
