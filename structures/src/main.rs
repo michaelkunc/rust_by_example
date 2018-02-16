@@ -21,8 +21,10 @@ struct Rectangle{
 }
 
 // TODO: implement rect_area
-fn rect_area(rect: Rectangle){
-    
+fn rect_area(rect: &Rectangle)-> f32{
+    let Point {x: x1, y: y1} = rect.p1;
+    let Point {x: x2, y: y2} = rect.p2;
+    (x1 - x2) * (y1-y2)
 }
 
 // TODO: implement square
@@ -56,4 +58,6 @@ fn main() {
 
     println!("the rectangle points are {:?} {:?}", _rectangle.p1, _rectangle.p2);
 
+    println!("the area of the rectange is {:?}", rect_area(&_rectangle));
+    
 }
