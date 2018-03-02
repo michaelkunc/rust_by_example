@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 
 enum WebEvent {
     PageLoad,
@@ -22,5 +21,16 @@ fn inspect(event: WebEvent){
 }
 
 fn main() {
+    let pressed = WebEvent::KeyPress('x');
+    let pasted = WebEvent::Paste("my text".to_owned());
+    let click = WebEvent::Click {x: 20, y: 30};
+    let load = WebEvent::PageLoad;
+    let unload = WebEvent::PageUnload;
+
+    inspect(pressed);
+    inspect(pasted);
+    inspect(click);
+    inspect(load);
+    inspect(unload);
 
 }
